@@ -35,16 +35,6 @@ I enjoy turning raw data into structured pipelines, meaningful analysis, and pra
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 
-## 🚀 Featured Project
-
-### 📈 Bank Marketing Classification
-
-A Data Science term project focused on predicting bank marketing campaign outcomes using classification models.
-
-**Topics:** Data Analysis · Classification · Machine Learning · Model Evaluation
-
-[**View Repository →**](https://github.com/yurimakes/26-1-data-science-term-project)
-
 ---
 
 <div align="center">
