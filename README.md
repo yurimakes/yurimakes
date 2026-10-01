@@ -2,7 +2,7 @@
 
 # Hi, I'm Yuri 👋
 
-### AI & IT Convergence Student  
+### Artificial Intelligence Major  
 **Data Engineering · Data Analytics · Machine Learning**
 
 I enjoy turning raw data into structured pipelines, meaningful analysis, and practical insights.
@@ -13,7 +13,7 @@ I enjoy turning raw data into structured pipelines, meaningful analysis, and pra
 
 ## 👩‍💻 About Me
 
-- 🎓 Studying **Artificial Intelligence & IT Convergence**
+- 🎓 Majoring in **Artificial Intelligence**
 - 📊 Interested in **Data Engineering** and **Data Analytics**
 - 🤖 Exploring **Machine Learning** and data-driven problem solving
 - 🛠️ Building projects with a focus on clear documentation and reproducible workflows
