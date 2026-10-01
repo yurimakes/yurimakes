@@ -19,7 +19,7 @@ I enjoy turning raw data into structured pipelines, meaningful analysis, and pra
 - 🛠️ Building projects with a focus on clear documentation and reproducible workflows
 - 🌱 Learning through projects, open-source tools, and hands-on experimentation
 
-## 🧰 Tools & Technologies I've Used
+## 🧰 Technical Skills
 
 ### Languages
 
