@@ -16,7 +16,6 @@ I enjoy turning raw data into structured pipelines, meaningful analysis, and pra
 - 🎓 Majoring in **Artificial Intelligence**
 - 📊 Interested in **Data Engineering** and **Data Analytics**
 - 🤖 Exploring **Machine Learning** and data-driven problem solving
-- 🗺️ Interested in **geospatial data analysis** and GIS
 - 🛠️ Building projects with a focus on clear documentation and reproducible workflows
 - 🌱 Learning through projects, open-source tools, and hands-on experimentation
 
