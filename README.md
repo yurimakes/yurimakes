@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hi, I'm Yuri 👋
+# Yuri · Data & AI
 
 ### Artificial Intelligence Major  
 **Data Engineering · Data Analytics · Machine Learning**
