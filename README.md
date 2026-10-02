@@ -95,6 +95,5 @@ I enjoy turning raw data into structured pipelines, meaningful analysis, and pra
 
 **Data Engineering · Data Analytics · AI/ML · Open Source**
 
-More projects will be added as they are prepared for public release.
 
 </div>
