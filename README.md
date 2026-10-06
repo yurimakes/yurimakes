@@ -52,7 +52,6 @@ I enjoy turning raw data into structured pipelines, meaningful analysis, and pra
 ![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=000000)
 ![Azure Cosmos DB](https://img.shields.io/badge/Azure_Cosmos_DB-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![Azure Database for PostgreSQL](https://img.shields.io/badge/Azure_PostgreSQL-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
-![psycopg2](https://img.shields.io/badge/psycopg2-336791?style=flat-square&logo=postgresql&logoColor=white)
 
 ### Cloud & Data Engineering
 
@@ -60,9 +59,6 @@ I enjoy turning raw data into structured pipelines, meaningful analysis, and pra
 ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white)
 ![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
 ![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
-![Delta Lake](https://img.shields.io/badge/Delta_Lake-00ADD8?style=flat-square&logo=delta&logoColor=white)
-![Azure Functions](https://img.shields.io/badge/Azure_Functions-0062AD?style=flat-square&logo=azurefunctions&logoColor=white)
-![Azure Event Hubs](https://img.shields.io/badge/Azure_Event_Hubs-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![Azure Data Lake Storage](https://img.shields.io/badge/Azure_Data_Lake_Storage-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 
 ### Development & Deployment
