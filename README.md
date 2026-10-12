@@ -32,7 +32,7 @@
 
 `Python` `PostgreSQL` `SQL` `RDF/Turtle` `Ontology Modeling`
 
-### [지원장바구니](https://github.com/yurimakes/youth-policy-llm-recommender) — 청년정책 AI 에이전트 (기획·AI·백엔드 / 개발 중)
+### [지원장바구니](https://github.com/yurimakes/youth-policy-llm-recommender) — 청년정책 AI 에이전트
 
 - **정책 데이터 파이프라인 (v0):** 청년정책 API 데이터를 수집해 원본 응답·메타데이터를 보존하고, 공통 정책 모델로 정규화해 SQLite에 중복 없이 적재했습니다. 연령·지역·취업 상태·신청 기간을 규칙으로 평가해 **조건 일치·명확한 불일치·추가 확인 필요**를 구분했습니다.
 - **검색·설명 AI (v0):** 규칙 평가를 통과하거나 추가 확인이 필요한 후보에 **OpenAI 임베딩·FAISS 검색**을 적용하고, 검색된 정책의 공식 필드와 판정 근거를 LLM에 전달해 추천 이유를 설명하도록 구현했습니다. AI 호출 실패 시에도 규칙 평가 결과를 유지합니다.
