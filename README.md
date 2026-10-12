@@ -1,81 +1,82 @@
-<div align="center">
+# Yuri | Data Engineering
 
-# Yuri · Data & AI
+**Python · SQL · Azure · Databricks**
 
-### Artificial Intelligence Major  
-**Data Engineering · Data Analytics · Machine Learning**
+데이터를 수집·정규화하고, 분석·ML·API에 연결하는 프로젝트를 개발했습니다.  
+**Focus:** 데이터 정합성 · 재현 가능한 검증 · 데이터 파이프라인
 
-I enjoy turning raw data into structured pipelines, meaningful analysis, and practical insights.
-
-</div>
+**Background:** 인공지능 전공
 
 ---
 
-## 👩‍💻 About Me
+## 🚀 Engineering Projects
 
-- 🎓 Majoring in **Artificial Intelligence**
-- 📊 Interested in **Data Engineering** and **Data Analytics**
-- 🤖 Exploring **Machine Learning** and data-driven problem solving
-- 🛠️ Building projects with a focus on clear documentation and reproducible workflows
-- 🌱 Learning through projects, open-source tools, and hands-on experimentation
+### [CANOPY Data Platform](https://github.com/yurimakes/canopy-data-platform) — GPS 기반 친환경 이동 서비스
 
-## 🧰 Technical Skills
+- **GPS 수집·원본 보존:** 이벤트 스키마와 Azure Functions 수집 기능을 구현하고, Event Hubs → ADLS 원본 저장 흐름을 검증했습니다.
+- **분석 데이터 연결:** Databricks에서 개인별 이동 기준 산정, 친환경 미션·보상·랭킹을 연결하고, 보상 이력 중복 기록을 방지하는 멱등 처리 로직을 구현했습니다.
 
-### Languages
+`Azure Functions` `Event Hubs` `ADLS` `Databricks` `PySpark` `MLflow`
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white)
+### 잠실 교통 혼잡 예측 — 대중교통 혼잡 예측·운영 지원
 
-### Data Analysis, Visualization & GIS
+- **수집·전처리:** 버스·지하철·행사·기상 데이터의 정규화와 CSV/XLSX 기반 재실행 경로를 개발했습니다.
+- **데이터 정합성·ML 검증:** **실시간 5·10·30분 관측과 과거 1시간 단위 학습 데이터의 시간 해상도 불일치** 및 지하철 호선 범위 차이를 분석하고, 입력 기준 정리와 시간순 모델 평가를 개선하고 있습니다.
 
-![OpenPyXL](https://img.shields.io/badge/OpenPyXL-217346?style=flat-square&logoColor=white)
-![QGIS](https://img.shields.io/badge/QGIS-589632?style=flat-square&logo=qgis&logoColor=white)
+`Python` `Azure` `PostgreSQL` `scikit-learn`
 
-### Machine Learning & AI
+### 금융상품 AI Agent — 미래에셋증권 제10회 AI페스티벌
 
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![torchvision](https://img.shields.io/badge/torchvision-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![timm](https://img.shields.io/badge/timm-222222?style=flat-square&logoColor=white)
-![LightGBM](https://img.shields.io/badge/LightGBM-02569B?style=flat-square&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-EC4E20?style=flat-square&logoColor=white)
-![CatBoost](https://img.shields.io/badge/CatBoost-FFCC00?style=flat-square&logoColor=000000)
-![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=flat-square&logoColor=white)
-![OpenAI API](https://img.shields.io/badge/OpenAI_API-412991?style=flat-square&logo=openai&logoColor=white)
-![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white)
+- **온톨로지 설계:** RDF/Turtle 온톨로지와 Semantic Registry를 구현해 금융상품의 의미·단위·허용 연산을 구조화했습니다.
+- **조회 검증:** 허용된 필드·연산을 검사한 뒤 PostgreSQL 구조화 조회와 근거 기반 AI 응답을 연결했습니다.
 
-### Databases & Storage
+`Python` `PostgreSQL` `SQL` `RDF/Turtle` `Ontology Modeling`
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=000000)
-![Azure Cosmos DB](https://img.shields.io/badge/Azure_Cosmos_DB-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
-![Azure Database for PostgreSQL](https://img.shields.io/badge/Azure_PostgreSQL-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
+### [지원장바구니](https://github.com/yurimakes/youth-policy-llm-recommender) — 청년정책 AI 에이전트
 
-### Cloud & Data Engineering
+- **정책 데이터·API:** 정책 수집·정규화·SQLite 저장과 규칙 기반 조건 판정, FAISS 검색·LLM 설명을 FastAPI로 연결했습니다.
+- **재현·테스트:** 예제 정책 **10개**에 대한 **13개 연결·동작 검사**를 재현 가능하게 구성하고, GitHub Actions에서 Python·JavaScript·브라우저 테스트를 연결했습니다. [체험 데모](https://jiwon-basket.vercel.app/)는 **가상 정책 기반 화면**입니다.
 
-![Microsoft Azure](https://img.shields.io/badge/Microsoft_Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
-![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white)
-![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
-![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=flat-square&logo=apachespark&logoColor=white)
-![Azure Data Lake Storage](https://img.shields.io/badge/Azure_Data_Lake_Storage-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
+`Python` `SQLite` `FastAPI` `FAISS` `OpenAI API` `GitHub Actions`
 
-### Development & Deployment
+### [FinBridge](https://github.com/start-finance-ai/finbridge-backend) — 창업·금융지원 의사결정 서비스
 
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![GitHub CLI](https://img.shields.io/badge/GitHub_CLI-181717?style=flat-square&logo=github&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![Railway](https://img.shields.io/badge/Railway-0B0D0E?style=flat-square&logo=railway&logoColor=white)
+- **데이터·계산 API:** 지원사업 데이터 정규화·검색·조건 매칭과 재무·소득·매출 계산 API를 개발했습니다.
+- **신뢰성:** 규칙 기반 판정·계산과 LLM 설명을 분리하고, AI 호출이 실패해도 확인된 결과를 제공하도록 폴백을 구현했습니다. [Frontend](https://github.com/start-finance-ai/finbridge-frontend)
+
+`Python` `FastAPI` `Pydantic` `OpenAI API`
+
+## 📊 Machine Learning & Data Analysis
+
+### [Wind Power Forecasting](https://github.com/yurimakes/wind-forecasting-ai) — 풍력 발전량 예측
+
+- LDAPS·GFS 기상 예보 특징을 생성하고, 학습·검증 시점을 분리해 회귀 모델과 앙상블을 비교했습니다.
+- 입력·예측값 범위와 결과 파일을 검사하고 실험·재현 방법을 문서화했습니다.
+
+`Python` `LightGBM` `XGBoost` `CatBoost`
+
+### CUB-200-2011 Bird Classification — 200종 조류 이미지 분류
+
+- **모델 학습·비교:** PyTorch로 학습·추론 코드를 구현하고, ResNet50·EfficientNet-B3·ConvNeXt 계열의 이미지 분류 모델을 비교했습니다.
+- **파인튜닝·평가:** 이미지 증강과 학습 설정을 실험해 ConvNeXt-Base(384×384)를 최종 선택했습니다. 저장소에 기록된 최종 **리더보드 Macro-F1은 0.9098**입니다.
+
+`Python` `PyTorch` `torchvision` `timm` `ConvNeXt`
+
+### [Bank Marketing Classification](https://github.com/yurimakes/26-1-data-science-term-project) — 은행 마케팅 분류
+
+- Logistic Regression·Random Forest를 비교하고, 불균형 데이터에서 F1·Recall·ROC-AUC를 평가했습니다.
+- 양성 클래스 탐지의 한계를 분석하고 모델 결과를 해석했습니다.
+
+`Python` `scikit-learn`
 
 ---
 
-<div align="center">
+## 🛠️ Tech Stack
 
-### Currently interested in
-
-**Data Engineering · Data Analytics · AI/ML · Open Source**
-
-
-</div>
+| Area | Tools |
+| --- | --- |
+| **Data Engineering & Cloud** | Python · SQL · PostgreSQL · Azure Functions · Event Hubs · ADLS · Databricks · Apache Spark / PySpark |
+| **Applied AI & Backend** | FastAPI · SQLite · Pydantic · FAISS · OpenAI API · RDF/Turtle · Ontology Modeling |
+| **Machine Learning** | scikit-learn · LightGBM · XGBoost · CatBoost · MLflow |
+| **Development & Testing** | Git · GitHub · GitHub Actions |
+| **Coursework & Experiments** | PyTorch |
