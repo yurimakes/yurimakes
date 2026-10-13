@@ -30,10 +30,9 @@
 
 ## 🛠️ Tech Stack
 
-| Area | Tools |
+| Area | Core Stack |
 | --- | --- |
-| **Data Engineering & Cloud** | Python · SQL · PostgreSQL · Azure Functions · Event Hubs · ADLS · Databricks · Apache Spark / PySpark |
-| **Applied AI & Backend** | FastAPI · SQLite · Pydantic · FAISS · RAG · OpenAI API · RDF/Turtle · Ontology Modeling |
-| **Machine Learning** | scikit-learn · LightGBM · XGBoost · CatBoost · MLflow |
-| **Development & Testing** | Git · GitHub · GitHub Actions |
-| **Coursework & Experiments** | PyTorch |
+| **Languages** | Python · SQL |
+| **Data Engineering & Cloud** | Microsoft Azure · Databricks · Apache Spark (PySpark) · PostgreSQL |
+| **Applied AI & Backend** | RAG · FAISS · Ontology Modeling (RDF/Turtle) · FastAPI |
+| **Machine Learning** | scikit-learn · PyTorch · MLflow |
