@@ -32,8 +32,8 @@
 ## 🛠️ Core Stack
 
 | Area | Tools |
-| --- | --- |
-| **Languages** | Python · SQL |
-| **Data Engineering & Cloud** | Microsoft Azure · Databricks · Apache Spark (PySpark) · PostgreSQL |
-| **Applied AI & Backend** | RAG · FAISS · Ontology Modeling (RDF/Turtle) · FastAPI |
-| **Machine Learning** | scikit-learn · PyTorch · MLflow |
+|:--|:--|
+| **Languages** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=databricks&logoColor=white) |
+| **Data Engineering & Cloud** | ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logoColor=white) ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white) ![Spark](https://img.shields.io/badge/PySpark-E25A1C?style=flat-square&logo=apachespark&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) |
+| **Applied AI & Backend** | ![RAG](https://img.shields.io/badge/RAG-8A2BE2?style=flat-square) ![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=flat-square&logo=meta&logoColor=white) ![RDF](https://img.shields.io/badge/Ontology_(RDF/Turtle)-0C479D?style=flat-square&logo=semanticweb&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) |
+| **Machine Learning** | ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) ![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white) |
