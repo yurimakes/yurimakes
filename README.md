@@ -1,7 +1,7 @@
 <h1 align="center">Yuri</h1>
 
 <p align="center">
-  <strong>Data Engineering · Data Analytics · Applied AI</strong><br>
+  <strong>Data Engineering</strong><br>
   데이터 수집·정합성 검증부터 분석과 AI 서비스 연계까지.<br>
   <sub>Majoring in Artificial Intelligence</sub>
 </p>
@@ -14,7 +14,7 @@
 
 - **[CANOPY Data Platform](https://github.com/yurimakes/canopy-data-platform)** — GPS 원본 수집부터 Databricks 주간 분석·미션·보상 데이터 파이프라인까지 구현.
 - **[잠실 교통 혼잡 예측](https://github.com/transit-control-tower)** — 교통 데이터 정합성 개선과 시계열 혼잡 예측 검증 **(팀장·PM)**.
-- **금융상품 AI Agent** — 금융상품 온톨로지·Semantic Registry·PostgreSQL 조회 및 근거 기반 AI 응답 구현 **(팀장)**.
+- **금융상품 AI Agent** — 미래에셋증권 제10회 AI페스티벌 출품 · 금융상품 온톨로지·Semantic Registry·PostgreSQL 조회 및 근거 기반 AI 응답 구현 **(팀장)**.
 - **[지원장바구니](https://github.com/yurimakes/youth-policy-llm-recommender)** — 청년정책 탐색 서비스 기획, 정책 데이터 파이프라인·FAISS 검색·LLM 설명 개발 · [가상 데모](https://jiwon-basket.vercel.app/).
 - **[FinBridge](https://github.com/start-finance-ai/finbridge-backend)** — 지원사업 데이터·재무 계산 API와 규칙·LLM 분리 기반 폴백 구현.
 - **CertiMakers** — KC 인증 준비 AI 서비스 기획·팀 리딩 및 RAG 근거 검색·안전성 평가 **(팀장·PM)**.
