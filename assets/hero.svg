@@ -29,9 +29,34 @@
     .handle { font-size: 15px; font-weight: 600; fill: #0b2e4f; opacity: .55; }
     .tag { font-size: 21px; font-weight: 500; fill: #1c5486; }
     .step { font-size: 15px; font-weight: 600; fill: #0b2e4f; }
-    .float { animation: float 7s ease-in-out infinite; }
-    @keyframes float { 50% { transform: translateY(-10px); } }
-    @media (prefers-reduced-motion: reduce) { .float { animation: none; } }
+    /* Ambient motion works even when this SVG is embedded as a GitHub README image. */
+    .bubble-drift { animation: drift 7.2s ease-in-out infinite; }
+    .bubble-drift.small { animation-name: small-drift; animation-duration: 5.8s; animation-delay: -2.8s; }
+    .bubble-drift.tiny { animation-name: tiny-drift; animation-duration: 8.5s; animation-delay: -1.4s; }
+    @keyframes drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-7px, -12px); } }
+    @keyframes small-drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(8px, -10px); } }
+    @keyframes tiny-drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-5px, 6px); } }
+
+    .bubble-target { transform-box: fill-box; transform-origin: center; transition: transform .32s cubic-bezier(.2,.8,.2,1), filter .32s ease; }
+    /* Hover/press apply when the SVG is opened inline or standalone. GitHub image embedding disables individual hit-testing. */
+    .bubble-target:hover, .bubble-target:focus-visible {
+      transform: scale(1.10); filter: drop-shadow(0 0 14px rgba(255,255,255,.82));
+    }
+    .bubble-target:active { transform: scale(.96); }
+    .bubble-target { cursor: pointer; outline: none; }
+    .bubble-target:focus-visible { outline: 2px solid rgba(23,93,157,.65); }
+
+    .halo { fill: none; stroke: #fff; stroke-width: 1.4; opacity: 0; transform-box: fill-box; transform-origin: center; animation: halo 5s ease-out infinite; }
+    .halo.delay { animation-delay: -2.5s; }
+    @keyframes halo { 0%, 10% { opacity: 0; transform: scale(1); } 30% { opacity: .52; } 68%, 100% { opacity: 0; transform: scale(1.22); } }
+    .glint { animation: glint 3.8s ease-in-out infinite alternate; }
+    .glint.alt { animation-delay: -1.9s; }
+    @keyframes glint { from { opacity: .55; } to { opacity: .98; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bubble-drift, .halo, .glint { animation: none !important; }
+      .bubble-target { transition: none; }
+    }
   </style>
 
   <g clip-path="url(#card)">
@@ -52,15 +77,29 @@
 
     <rect width="900" height="320" filter="url(#grain)" opacity=".18"/>
 
-    <!-- liquid glass orb -->
-    <g class="float">
-      <circle cx="760" cy="150" r="92" fill="url(#orb)" stroke="url(#rim)" stroke-width="2"/>
-      <ellipse cx="728" cy="108" rx="34" ry="16" fill="#ffffff" opacity=".75" transform="rotate(-28 728 108)"/>
-      <circle cx="800" cy="196" r="6" fill="#ffffff" opacity=".6"/>
+    <!-- Floating droplets: independent drift, soft ripple, specular twinkle. -->
+    <!-- Hover effects activate for a standalone/inline SVG; README <img> shows ambient motion. -->
+    <g class="bubble-drift">
+      <g class="bubble-target" tabindex="0" aria-label="Large floating water droplet">
+        <circle class="halo" cx="760" cy="150" r="95"/>
+        <circle class="halo delay" cx="760" cy="150" r="95"/>
+        <circle cx="760" cy="150" r="92" fill="url(#orb)" stroke="url(#rim)" stroke-width="2"/>
+        <ellipse class="glint" cx="728" cy="108" rx="34" ry="16" fill="#ffffff" opacity=".75" transform="rotate(-28 728 108)"/>
+        <circle class="glint alt" cx="800" cy="196" r="6" fill="#ffffff" opacity=".6"/>
+      </g>
     </g>
-    <g class="float" style="animation-delay:-3s">
-      <circle cx="640" cy="250" r="26" fill="url(#orb)" stroke="url(#rim)" stroke-width="1.5"/>
-      <ellipse cx="632" cy="241" rx="9" ry="5" fill="#ffffff" opacity=".8" transform="rotate(-28 632 241)"/>
+    <g class="bubble-drift small">
+      <g class="bubble-target" tabindex="0" aria-label="Small floating water droplet">
+        <circle class="halo delay" cx="640" cy="250" r="27"/>
+        <circle cx="640" cy="250" r="26" fill="url(#orb)" stroke="url(#rim)" stroke-width="1.5"/>
+        <ellipse class="glint alt" cx="632" cy="241" rx="9" ry="5" fill="#ffffff" opacity=".8" transform="rotate(-28 632 241)"/>
+      </g>
+    </g>
+    <g class="bubble-drift tiny">
+      <g class="bubble-target" tabindex="0" aria-label="Tiny floating water droplet">
+        <circle cx="657" cy="70" r="13" fill="url(#orb)" stroke="url(#rim)" stroke-width="1.5"/>
+        <ellipse class="glint" cx="652" cy="65" rx="4.3" ry="2.5" fill="#ffffff" opacity=".85" transform="rotate(-28 652 65)"/>
+      </g>
     </g>
 
     <!-- type -->
