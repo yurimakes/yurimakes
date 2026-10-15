@@ -1,7 +1,9 @@
-<h1 align="center">Yuri</h1>
+<p align="center">
+  <img src="./assets/hero.svg" width="100%" alt="Yuri — Data Engineering profile banner" />
+</p>
 
 <p align="center">
-  <strong>Data Engineering</strong><br>
+  <strong>Yuri</strong> · <strong>Data Engineering</strong><br>
   데이터 수집·정합성 검증부터 분석과 AI 서비스 연계까지.<br>
   <sub>Majoring in Artificial Intelligence</sub>
 </p>
