@@ -25,7 +25,7 @@
 
   <style>
     .t { font-family: "SF Pro Display", Pretendard, "Segoe UI", system-ui, sans-serif; }
-    .name { font-size: 124px; font-weight: 800; letter-spacing: -6px; fill: #0b2e4f; }
+    .name { font-family: "Avenir Next", "Segoe UI Variable Display", "SF Pro Display", "Segoe UI", system-ui, sans-serif; font-size: 96px; font-weight: 600; letter-spacing: -3px; fill: #0b2e4f; }
     .handle { font-size: 15px; font-weight: 600; fill: #0b2e4f; opacity: .55; }
     .tag { font-size: 21px; font-weight: 500; fill: #1c5486; }
     .step { font-size: 15px; font-weight: 600; fill: #0b2e4f; }
@@ -117,7 +117,7 @@
 
     <!-- type -->
     <text class="t handle" x="52" y="58">@yurimakes</text>
-    <text class="t name" x="40" y="160">yuri</text>
+    <text class="t name" x="52" y="158">yuri</text>
     <text class="t tag" x="50" y="214">data engineering × applied ai</text>
 
     <!-- glass pipeline pill -->
