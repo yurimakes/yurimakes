@@ -1,127 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" role="img" aria-label="yuri, data engineering and applied ai">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" role="img" aria-labelledby="title desc">
+  <title id="title">yuri — data engineering × applied ai</title>
+  <desc id="desc">A translucent glass panel over fluid blue, cyan and lavender gradients.</desc>
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#8fd4ff"/>
-      <stop offset=".55" stop-color="#cdeeff"/>
-      <stop offset="1" stop-color="#f3fbff"/>
+    <linearGradient id="base" x2="1" y2="1">
+      <stop stop-color="#294e74"/><stop offset=".5" stop-color="#388da8"/><stop offset="1" stop-color="#8075a7"/>
     </linearGradient>
-    <radialGradient id="orb" cx=".35" cy=".3" r=".75">
-      <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
-      <stop offset=".45" stop-color="#e6f6ff" stop-opacity=".45"/>
-      <stop offset="1" stop-color="#7cc6ff" stop-opacity=".35"/>
-    </radialGradient>
-    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity=".15"/>
+    <linearGradient id="glass" x2=".8" y2="1">
+      <stop stop-color="#fff" stop-opacity=".19"/><stop offset=".46" stop-color="#e2f9ff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity=".22"/>
     </linearGradient>
-    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="42"/></filter>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#2a7fc4" flood-opacity=".18"/></filter>
-    <filter id="grain">
-      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/>
-      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0"/>
-    </filter>
-    <clipPath id="card"><rect width="900" height="320" rx="32"/></clipPath>
+    <linearGradient id="edge" x2=".7" y2="1">
+      <stop stop-color="#fff" stop-opacity=".6"/><stop offset=".45" stop-color="#d7f6ff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity=".42"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2=".8">
+      <stop stop-color="#b5fff0" stop-opacity=".12"/><stop offset=".32" stop-color="#cbfffa" stop-opacity=".8"/><stop offset=".52" stop-color="#83d9ff" stop-opacity=".12"/><stop offset=".78" stop-color="#d5bcff" stop-opacity=".62"/><stop offset="1" stop-color="#e4f9ff" stop-opacity=".08"/>
+    </linearGradient>
+    <linearGradient id="pill" x2="0" y2="1">
+      <stop stop-color="#fff" stop-opacity=".25"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#d9f4ff" stop-opacity=".18"/>
+    </linearGradient>
+    <filter id="blur" x="-80%" y="-100%" width="260%" height="300%"><feGaussianBlur stdDeviation="46"/></filter>
+    <filter id="ribbonSoft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="shadow" x="-15%" y="-25%" width="130%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#112b55" flood-opacity=".22"/></filter>
+    <clipPath id="canvas"><rect width="900" height="320" rx="28"/></clipPath>
+    <clipPath id="panel"><rect x="28" y="24" width="844" height="272" rx="32"/></clipPath>
   </defs>
-
   <style>
-    .t { font-family: "SF Pro Display", Pretendard, "Segoe UI", system-ui, sans-serif; }
-    /* The name uses Segoe UI Bold outlines for consistent rendering across devices. */
-    .handle { font-size: 15px; font-weight: 600; fill: #0b2e4f; opacity: .55; }
-    .tag { font-size: 21px; font-weight: 500; fill: #1c5486; }
-    .step { font-size: 15px; font-weight: 600; fill: #0b2e4f; }
-    /* Ambient motion works even when this SVG is embedded as a GitHub README image. */
-    .bubble-drift { /* motion defined with native SVG animateTransform */ }
-
-
-
-    .bubble-target { transform-box: fill-box; transform-origin: center; transition: transform .32s cubic-bezier(.2,.8,.2,1), filter .32s ease; }
-    /* Hover/press apply when the SVG is opened inline or standalone. GitHub image embedding disables individual hit-testing. */
-    .bubble-target:hover, .bubble-target:focus-visible {
-      transform: scale(1.10); filter: drop-shadow(0 0 14px rgba(255,255,255,.82));
-    }
-    .bubble-target:active { transform: scale(.96); }
-    .bubble-target { cursor: pointer; outline: none; }
-    .bubble-target:focus-visible { outline: 2px solid rgba(23,93,157,.65); }
-
-    .glint { }
-    .glint.alt { }
-
-    @media (prefers-reduced-motion: reduce) {
-      .bubble-drift, .glint { animation: none !important; }
-      .bubble-target { transition: none; }
-    }
+    .type { font-family: "Segoe UI", Arial, sans-serif; fill: #fff; }
+    .handle { font-size: 13px; letter-spacing: 1.1px; fill: #ecf8ff; }
+    .tag { font-size: 20px; font-weight: 400; letter-spacing: .15px; }
+    .step { font-size: 13px; font-weight: 500; fill: #f5fcff; }
+    .meta { font-size: 11px; letter-spacing: 2px; fill: #e4f7ff; }
+    .fluid { animation: drift 16s ease-in-out infinite alternate; }
+    @keyframes drift { from { transform: translate(0,0); } to { transform: translate(-24px,12px); } }
+    @media (prefers-reduced-motion: reduce) { .fluid { animation: none; } }
   </style>
-
-  <g clip-path="url(#card)">
-    <rect width="900" height="320" fill="url(#sky)"/>
-
-    <!-- drifting light blobs -->
+  <g clip-path="url(#canvas)">
+    <rect width="900" height="320" fill="url(#base)"/>
     <g filter="url(#blur)">
-      <circle cx="700" cy="40" r="150" fill="#4fb6ff" opacity=".7">
-        <animateTransform attributeName="transform" type="translate" values="0 0; -60 30; 0 0" dur="16s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="140" cy="320" r="150" fill="#9fdcff" opacity=".8">
-        <animateTransform attributeName="transform" type="translate" values="0 0; 70 -20; 0 0" dur="18s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="520" cy="300" r="120" fill="#ffffff" opacity=".9">
-        <animateTransform attributeName="transform" type="translate" values="0 0; 40 -40; 0 0" dur="14s" repeatCount="indefinite"/>
-      </circle>
+      <ellipse cx="140" cy="18" rx="200" ry="100" fill="#1858cc" opacity=".85"/>
+      <ellipse class="fluid" cx="485" cy="115" rx="125" ry="180" fill="#50e2e2" opacity=".82"/>
+      <ellipse cx="820" cy="25" rx="155" ry="100" fill="#d8e7f3" opacity=".8"/>
+      <ellipse cx="790" cy="265" rx="170" ry="95" fill="#182b8e" opacity=".85"/>
+      <ellipse cx="220" cy="330" rx="210" ry="100" fill="#c9b0d8" opacity=".8"/>
     </g>
-
-    <rect width="900" height="320" filter="url(#grain)" opacity=".18"/>
-
-    <!-- Floating droplets: independent drift and specular twinkle. -->
-    <!-- Hover effects activate for a standalone/inline SVG; README <img> shows ambient motion. -->
-    <g class="bubble-drift">
-      <animateTransform attributeName="transform" type="translate" values="0 0; -12 -21; 6 -12; 0 0" keyTimes="0;.36;.72;1" dur="6.4s" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
-      <g class="bubble-target" tabindex="0" aria-label="Large floating water droplet">
-        <circle cx="760" cy="150" r="92" fill="url(#orb)"/>
-        <ellipse class="glint" cx="728" cy="108" rx="34" ry="16" fill="#ffffff" opacity=".75" transform="rotate(-28 728 108)">
-          <animate attributeName="opacity" values=".55;.92;.55" dur="3.4s" repeatCount="indefinite"/>
-        </ellipse>
-        <circle class="glint alt" cx="800" cy="196" r="6" fill="#ffffff" opacity=".6"/>
+    <rect x="28" y="24" width="844" height="272" rx="32" fill="url(#glass)" filter="url(#shadow)"/>
+    <g clip-path="url(#panel)">
+      <g class="fluid" opacity=".65" filter="url(#ribbonSoft)">
+        <path d="M633 -57 C465 17 574 119 711 113 C889 105 841 233 697 312" fill="none" stroke="url(#ribbon)" stroke-width="68"/>
+        <path d="M660 -50 C510 33 597 100 715 98 C907 95 866 251 725 328" fill="none" stroke="#e1ffff" stroke-opacity=".23" stroke-width="2"/>
       </g>
     </g>
-    <g class="bubble-drift small">
-      <animateTransform attributeName="transform" type="translate" values="0 0; 13 -15; -7 7; 0 0" keyTimes="0;.32;.70;1" dur="5.2s" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
-      <g class="bubble-target" tabindex="0" aria-label="Small floating water droplet">
-        <circle cx="640" cy="250" r="26" fill="url(#orb)"/>
-        <ellipse class="glint alt" cx="632" cy="241" rx="9" ry="5" fill="#ffffff" opacity=".8" transform="rotate(-28 632 241)">
-          <animate attributeName="opacity" values=".5;1;.5" dur="2.8s" repeatCount="indefinite"/>
-        </ellipse>
-      </g>
-    </g>
-    <g class="bubble-drift tiny">
-      <animateTransform attributeName="transform" type="translate" values="0 0; 13 10; -9 -9; 0 0" keyTimes="0;.28;.69;1" dur="7.8s" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
-      <g class="bubble-target" tabindex="0" aria-label="Tiny floating water droplet">
-        <circle cx="657" cy="70" r="13" fill="url(#orb)"/>
-        <ellipse class="glint" cx="652" cy="65" rx="4.3" ry="2.5" fill="#ffffff" opacity=".85" transform="rotate(-28 652 65)">
-          <animate attributeName="opacity" values=".55;.95;.55" dur="2.4s" repeatCount="indefinite"/>
-        </ellipse>
-      </g>
-    </g>
-
-    <!-- type -->
-    <text class="t handle" x="52" y="58">@yurimakes</text>
-    <g role="img" aria-label="yuri" fill="#0b2e4f">
+    <rect x="28.5" y="24.5" width="843" height="271" rx="31.5" fill="none" stroke="url(#edge)"/>
+    <path d="M61 25 H838" fill="none" stroke="#fff" stroke-opacity=".18"/>
+    <text class="type handle" x="62" y="62">@yurimakes</text>
+    <text class="type meta" x="838" y="62" text-anchor="end">DATA &amp; APPLIED AI</text>
+    <!-- Segoe UI Bold outlines preserve the chosen lettering on every device. -->
+    <g role="img" aria-label="yuri" fill="#fff" transform="translate(10 8)">
       <title>yuri</title>
       <path d="M108.469 101.574L87.344 157.738C82.266 171.246 74.615 178 64.391 178C60.497 178 57.298 177.56 54.793 176.68L54.793 163.883C56.926 165.135 59.245 165.762 61.75 165.762C65.88 165.762 68.758 163.815 70.383 159.922L73.125 153.473L52 101.574L69.773 101.574L79.473 133.211C80.082 135.175 80.556 137.494 80.895 140.168L81.098 140.168C81.402 138.204 81.961 135.919 82.773 133.313L92.574 101.574ZM164.328 153.574L148.332 153.574L148.332 145.652L148.078 145.652C144.117 151.78 138.819 154.844 132.184 154.844C120.132 154.844 114.106 147.548 114.106 132.957L114.106 101.574L130.102 101.574L130.102 131.535C130.102 138.882 133.013 142.555 138.836 142.555C141.714 142.555 144.016 141.548 145.742 139.533C147.469 137.519 148.332 134.785 148.332 131.332L148.332 101.574L164.328 101.574ZM211.758 116.047C209.828 114.997 207.577 114.473 205.004 114.473C201.517 114.473 198.792 115.751 196.828 118.307C194.865 120.863 193.883 124.341 193.883 128.742L193.883 153.574L177.836 153.574L177.836 101.574L193.883 101.574L193.883 111.223L194.086 111.223C196.625 104.181 201.195 100.66 207.797 100.66C209.49 100.66 210.81 100.863 211.758 101.27ZM227.754 93.348C225.046 93.348 222.828 92.544 221.102 90.936C219.375 89.327 218.512 87.355 218.512 85.02C218.512 82.616 219.375 80.652 221.102 79.129C222.828 77.605 225.046 76.844 227.754 76.844C230.496 76.844 232.722 77.605 234.432 79.129C236.141 80.652 236.996 82.616 236.996 85.02C236.996 87.457 236.141 89.454 234.432 91.012C232.722 92.569 230.496 93.348 227.754 93.348ZM235.676 153.574L219.629 153.574L219.629 101.574L235.676 101.574Z"/>
     </g>
-    <text class="t tag" x="50" y="214">data engineering × applied ai</text>
-
-    <!-- glass pipeline pill -->
-    <rect x="48" y="240" width="520" height="48" rx="24" fill="#ffffff" fill-opacity=".38" stroke="url(#rim)" stroke-width="1.5"/>
-    <rect x="52" y="244" width="128" height="40" rx="20" fill="#ffffff" filter="url(#soft)">
-      <animate attributeName="x" dur="8s" repeatCount="indefinite"
-        values="52;52;182;182;312;312;436;436;52"
-        keyTimes="0;.2;.25;.45;.5;.7;.75;.95;1"
-        calcMode="spline" keySplines=".6 0 .2 1;.6 0 .2 1;.6 0 .2 1;.6 0 .2 1;.6 0 .2 1;.6 0 .2 1;.6 0 .2 1;.6 0 .2 1"/>
-    </rect>
-    <g class="t step" text-anchor="middle">
-      <text x="116" y="269">collect</text>
-      <text x="246" y="269">validate</text>
-      <text x="376" y="269">analyze</text>
-      <text x="500" y="269">serve ai</text>
+    <text class="type tag" x="62" y="217">data engineering × applied ai</text>
+    <g transform="translate(62 244)">
+      <rect width="472" height="32" rx="16" fill="url(#pill)" stroke="#e5faff" stroke-opacity=".35"/>
+      <g class="type step" text-anchor="middle">
+        <text x="57" y="21">collect</text>
+        <text x="172" y="21">validate</text>
+        <text x="291" y="21">analyze</text>
+        <text x="410" y="21">serve ai</text>
+      </g>
+      <g stroke="#eafaff" stroke-opacity=".55" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M107 16 H121 M117 12 L121 16 L117 20"/>
+        <path d="M226 16 H240 M236 12 L240 16 L236 20"/>
+        <path d="M345 16 H359 M355 12 L359 16 L355 20"/>
+      </g>
+    </g>
+    <g transform="translate(790 218)" fill="none" stroke="#f2ffff" stroke-opacity=".8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="48" height="48" rx="24" fill="url(#pill)" stroke-opacity=".3"/>
+      <path d="M15 24 H33 M26 17 L33 24 L26 31"/>
     </g>
   </g>
 </svg>
