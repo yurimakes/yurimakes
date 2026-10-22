@@ -43,13 +43,11 @@
     .bubble-target { cursor: pointer; outline: none; }
     .bubble-target:focus-visible { outline: 2px solid rgba(23,93,157,.65); }
 
-    .halo { fill: none; stroke: #fff; stroke-width: 1.4; opacity: 0; }
-    .halo.delay { opacity: 0; }
     .glint { }
     .glint.alt { }
 
     @media (prefers-reduced-motion: reduce) {
-      .bubble-drift, .halo, .glint { animation: none !important; }
+      .bubble-drift, .glint { animation: none !important; }
       .bubble-target { transition: none; }
     }
   </style>
@@ -72,20 +70,12 @@
 
     <rect width="900" height="320" filter="url(#grain)" opacity=".18"/>
 
-    <!-- Floating droplets: independent drift, soft ripple, specular twinkle. -->
+    <!-- Floating droplets: independent drift and specular twinkle. -->
     <!-- Hover effects activate for a standalone/inline SVG; README <img> shows ambient motion. -->
     <g class="bubble-drift">
       <animateTransform attributeName="transform" type="translate" values="0 0; -12 -21; 6 -12; 0 0" keyTimes="0;.36;.72;1" dur="6.4s" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
       <g class="bubble-target" tabindex="0" aria-label="Large floating water droplet">
-        <circle class="halo" cx="760" cy="150" r="95">
-          <animate attributeName="r" values="92;114;92" dur="4.6s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;.42;0" keyTimes="0;.34;1" dur="4.6s" repeatCount="indefinite"/>
-        </circle>
-        <circle class="halo delay" cx="760" cy="150" r="95">
-          <animate attributeName="r" values="92;113;92" dur="4.6s" begin="-2.3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;.28;0" keyTimes="0;.34;1" dur="4.6s" begin="-2.3s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="760" cy="150" r="92" fill="url(#orb)" stroke="url(#rim)" stroke-width="2"/>
+        <circle cx="760" cy="150" r="92" fill="url(#orb)"/>
         <ellipse class="glint" cx="728" cy="108" rx="34" ry="16" fill="#ffffff" opacity=".75" transform="rotate(-28 728 108)">
           <animate attributeName="opacity" values=".55;.92;.55" dur="3.4s" repeatCount="indefinite"/>
         </ellipse>
@@ -95,11 +85,7 @@
     <g class="bubble-drift small">
       <animateTransform attributeName="transform" type="translate" values="0 0; 13 -15; -7 7; 0 0" keyTimes="0;.32;.70;1" dur="5.2s" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
       <g class="bubble-target" tabindex="0" aria-label="Small floating water droplet">
-        <circle class="halo delay" cx="640" cy="250" r="27">
-          <animate attributeName="r" values="26;34;26" dur="3.8s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0;.42;0" keyTimes="0;.3;1" dur="3.8s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="640" cy="250" r="26" fill="url(#orb)" stroke="url(#rim)" stroke-width="1.5"/>
+        <circle cx="640" cy="250" r="26" fill="url(#orb)"/>
         <ellipse class="glint alt" cx="632" cy="241" rx="9" ry="5" fill="#ffffff" opacity=".8" transform="rotate(-28 632 241)">
           <animate attributeName="opacity" values=".5;1;.5" dur="2.8s" repeatCount="indefinite"/>
         </ellipse>
@@ -108,7 +94,7 @@
     <g class="bubble-drift tiny">
       <animateTransform attributeName="transform" type="translate" values="0 0; 13 10; -9 -9; 0 0" keyTimes="0;.28;.69;1" dur="7.8s" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" repeatCount="indefinite"/>
       <g class="bubble-target" tabindex="0" aria-label="Tiny floating water droplet">
-        <circle cx="657" cy="70" r="13" fill="url(#orb)" stroke="url(#rim)" stroke-width="1.5"/>
+        <circle cx="657" cy="70" r="13" fill="url(#orb)"/>
         <ellipse class="glint" cx="652" cy="65" rx="4.3" ry="2.5" fill="#ffffff" opacity=".85" transform="rotate(-28 652 65)">
           <animate attributeName="opacity" values=".55;.95;.55" dur="2.4s" repeatCount="indefinite"/>
         </ellipse>
