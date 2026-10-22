@@ -19,7 +19,7 @@
 - **미래에셋증권 금융상품 AI Agent** — 금융상품 온톨로지·Semantic Registry·PostgreSQL 조회 및 근거 기반 AI 응답 구현.
 - **[지원장바구니](https://github.com/yurimakes/youth-policy-llm-recommender)** — 청년정책 탐색 서비스 기획, 정책 데이터 파이프라인·FAISS 검색·LLM 설명 개발 · [가상 데모](https://jiwon-basket.vercel.app/).
 - **[FinBridge](https://github.com/start-finance-ai/finbridge-backend)** — 예비창업자·소상공인 지원사업 데이터·재무 계산 API와 규칙·LLM 분리 기반 폴백 구현.
-- **CertiMakers** — KC 인증 준비 AI 서비스 기획·팀 리딩 및 RAG 근거 검색·안전성 평가 **(팀장·PM)**.
+- **CertiMakers** — KC 인증 준비 AI 서비스 기획·해커톤 6인 팀 리딩 및 RAG 근거 검색·안전성 평가 **(팀장·PM)**.
 
 ### Machine Learning & Data Analysis
 
