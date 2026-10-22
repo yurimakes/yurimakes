@@ -1,65 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" role="img" aria-labelledby="title desc">
-  <title id="title">Yuri — data engineering × applied ai</title>
-  <desc id="desc">A translucent glass panel over fluid blue, cyan and lavender gradients.</desc>
-  <defs>
-    <linearGradient id="base" x2="1" y2="1">
-      <stop stop-color="#294e74"/><stop offset=".5" stop-color="#388da8"/><stop offset="1" stop-color="#8075a7"/>
-    </linearGradient>
-    <linearGradient id="glass" x2=".8" y2="1">
-      <stop stop-color="#fff" stop-opacity=".19"/><stop offset=".46" stop-color="#e2f9ff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity=".22"/>
-    </linearGradient>
-    <linearGradient id="edge" x2=".7" y2="1">
-      <stop stop-color="#fff" stop-opacity=".6"/><stop offset=".45" stop-color="#d7f6ff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity=".42"/>
-    </linearGradient>
-    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2=".8">
-      <stop stop-color="#b5fff0" stop-opacity=".12"/><stop offset=".32" stop-color="#cbfffa" stop-opacity=".8"/><stop offset=".52" stop-color="#83d9ff" stop-opacity=".12"/><stop offset=".78" stop-color="#d5bcff" stop-opacity=".62"/><stop offset="1" stop-color="#e4f9ff" stop-opacity=".08"/>
-    </linearGradient>
-    <linearGradient id="pill" x2="0" y2="1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 320" width="900" height="320" role="img" aria-label="Yuri — data engineering and applied ai" tabindex="0">
+<defs>
+<linearGradient id="pill" x2="0" y2="1">
       <stop stop-color="#fff" stop-opacity=".25"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#d9f4ff" stop-opacity=".18"/>
     </linearGradient>
-    <filter id="blur" x="-80%" y="-100%" width="260%" height="300%"><feGaussianBlur stdDeviation="46"/></filter>
-    <filter id="ribbonSoft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2"/></filter>
-    <filter id="shadow" x="-15%" y="-25%" width="130%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#112b55" flood-opacity=".22"/></filter>
-    <clipPath id="canvas"><rect width="900" height="320" rx="28"/></clipPath>
-    <clipPath id="panel"><rect x="28" y="24" width="844" height="272" rx="32"/></clipPath>
-  </defs>
   <style>
     .type { font-family: "Segoe UI", Arial, sans-serif; fill: #fff; }
     .handle { font-size: 13px; letter-spacing: 1.1px; fill: #ecf8ff; }
     .tag { font-size: 20px; font-weight: 400; letter-spacing: .15px; }
     .step { font-size: 13px; font-weight: 500; fill: #f5fcff; }
     .meta { font-size: 11px; letter-spacing: 2px; fill: #e4f7ff; }
-    .fluid { animation: drift 16s ease-in-out infinite alternate; }
-    @keyframes drift { from { transform: translate(0,0); } to { transform: translate(-24px,12px); } }
-    @media (prefers-reduced-motion: reduce) { .fluid { animation: none; } }
-  </style>
-  <g clip-path="url(#canvas)">
-    <rect width="900" height="320" fill="url(#base)"/>
+  
+    .lens-interaction { transform-origin: 220px 165px; transition: filter .5s ease, transform .65s cubic-bezier(.2,.7,.3,1); }
+    svg:hover .lens-interaction, svg:focus-visible .lens-interaction { filter: brightness(1.06) saturate(1.12); transform: scale(1.025); }
+    .pipeline { transition: filter .4s ease; }
+    svg:hover .pipeline { filter: drop-shadow(0 2px 8px #d6faff66); }
+    .arrow-mark { transition: transform .4s ease; }
+    svg:hover .arrow-mark { transform: translateX(3px); }
+    @media (prefers-reduced-motion: reduce) { .lens-interaction, .pipeline, .arrow-mark { transition: none; } svg:hover .lens-interaction { transform: none; } }
+</style>
+
+  <filter id="blur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="48"/></filter>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0"/>
+  </filter>
+  <filter id="liquid" x="-20%" y="-40%" width="140%" height="180%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".006 .009" numOctaves="1" seed="7" result="n0">
+      <animate attributeName="baseFrequency" values=".006 .009;.009 .006;.006 .009" dur="9s" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feGaussianBlur in="n0" stdDeviation="4" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+
+  <radialGradient id="lensFill" cx=".32" cy=".28" r=".85">
+    <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
+    <stop offset=".5" stop-color="#fff" stop-opacity=".04"/>
+    <stop offset="1" stop-color="#cfe6ff" stop-opacity=".22"/>
+  </radialGradient>
+  <linearGradient id="lensRim" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffffff"/>
+    <stop offset=".35" stop-color="#7fe8ff"/>
+    <stop offset=".6" stop-color="#b9a2ff"/>
+    <stop offset=".85" stop-color="#ffc06b"/>
+    <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+  <filter id="edge" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+  <clipPath id="card"><rect width="900" height="320" rx="32"/></clipPath>
+  <clipPath id="lensClip"><ellipse cx="130" cy="168" rx="88" ry="84" ><animate attributeName="cx" values="130;230;300;190;130" dur="12s" repeatCount="indefinite" keyTimes="0;.28;.5;.78;1" calcMode="spline" keySplines=".45 0 .25 1;.45 0 .25 1;.45 0 .25 1;.45 0 .25 1"/><animate attributeName="cy" values="168;160;170;165;168" dur="12s" repeatCount="indefinite" keyTimes="0;.28;.5;.78;1" calcMode="spline" keySplines=".45 0 .25 1;.45 0 .25 1;.45 0 .25 1;.45 0 .25 1"/><animate attributeName="rx" values="88;94;84;88" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/><animate attributeName="ry" values="84;78;88;84" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></ellipse></clipPath>
+
+  <!-- background: blurred iridescent gradient -->
+  <g id="bg">
+    <rect width="900" height="320" fill="#a9c9ee"/>
     <g filter="url(#blur)">
-      <ellipse cx="140" cy="18" rx="200" ry="100" fill="#1858cc" opacity=".85"/>
-      <ellipse class="fluid" cx="485" cy="115" rx="125" ry="180" fill="#50e2e2" opacity=".82"/>
-      <ellipse cx="820" cy="25" rx="155" ry="100" fill="#d8e7f3" opacity=".8"/>
-      <ellipse cx="790" cy="265" rx="170" ry="95" fill="#182b8e" opacity=".85"/>
-      <ellipse cx="220" cy="330" rx="210" ry="100" fill="#c9b0d8" opacity=".8"/>
+      <circle cx="790" cy="210" r="170" fill="#1d43c4"><animateTransform attributeName="transform" type="translate" values="0 0;-50 -20;0 0" dur="17s" repeatCount="indefinite"/></circle>
+      <circle cx="60" cy="300" r="150" fill="#2c6be0"><animateTransform attributeName="transform" type="translate" values="0 0;60 -30;0 0" dur="19s" repeatCount="indefinite"/></circle>
+      <circle cx="430" cy="160" r="120" fill="#5fe2f0"><animateTransform attributeName="transform" type="translate" values="0 0;40 25;0 0" dur="13s" repeatCount="indefinite"/></circle>
+      <circle cx="300" cy="310" r="120" fill="#c4a9f2"><animateTransform attributeName="transform" type="translate" values="0 0;-40 -25;0 0" dur="15s" repeatCount="indefinite"/></circle>
+      <circle cx="640" cy="20" r="160" fill="#f1f4fa"><animateTransform attributeName="transform" type="translate" values="0 0;-60 10;0 0" dur="21s" repeatCount="indefinite"/></circle>
+      <circle cx="230" cy="190" r="55" fill="#f4d9c6" opacity=".9"><animateTransform attributeName="transform" type="translate" values="0 0;30 -15;0 0" dur="11s" repeatCount="indefinite"/></circle>
     </g>
-    <rect x="28" y="24" width="844" height="272" rx="32" fill="url(#glass)" filter="url(#shadow)"/>
-    <g clip-path="url(#panel)">
-      <g class="fluid" opacity=".65" filter="url(#ribbonSoft)">
-        <path d="M633 -57 C465 17 574 119 711 113 C889 105 841 233 697 312" fill="none" stroke="url(#ribbon)" stroke-width="68"/>
-        <path d="M660 -50 C510 33 597 100 715 98 C907 95 866 251 725 328" fill="none" stroke="#e1ffff" stroke-opacity=".23" stroke-width="2"/>
-      </g>
-    </g>
-    <rect x="28.5" y="24.5" width="843" height="271" rx="31.5" fill="none" stroke="url(#edge)"/>
-    <path d="M61 25 H838" fill="none" stroke="#fff" stroke-opacity=".18"/>
-    <text class="type handle" x="62" y="62">@yurimakes</text>
-    <text class="type meta" x="838" y="62" text-anchor="end">DATA &amp; APPLIED AI</text>
-    <!-- Segoe UI Bold outlines preserve the chosen lettering on every device. -->
-    <g role="img" aria-label="Yuri" fill="#fff" transform="translate(10 8)">
+  </g>
+
+  <g id="title" aria-label="Yuri" transform="translate(10 8)">
       <title>Yuri</title>
       <path d="M115.223 79.484L91.508 126.406L91.508 152.305L75.105 152.305L75.105 126.711L52 79.484L70.738 79.484L82.469 106.652C82.672 107.16 83.23 109.14 84.145 112.594L84.348 112.594C84.788 110.156 85.313 108.243 85.922 106.855L97.855 79.484ZM164.531 152.305L148.535 152.305L148.535 144.383L148.281 144.383C144.32 150.51 139.022 153.574 132.387 153.574C120.335 153.574 114.309 146.278 114.309 131.687L114.309 100.305L130.305 100.305L130.305 130.265C130.305 137.612 133.216 141.285 139.039 141.285C141.917 141.285 144.219 140.278 145.945 138.263C147.672 136.249 148.535 133.515 148.535 130.062L148.535 100.305L164.531 100.305ZM211.961 114.777C210.031 113.728 207.78 113.203 205.207 113.203C201.72 113.203 198.995 114.481 197.031 117.037C195.068 119.593 194.086 123.071 194.086 127.472L194.086 152.305L178.039 152.305L178.039 100.305L194.086 100.305L194.086 109.953L194.289 109.953C196.828 102.911 201.398 99.39 208 99.39C209.693 99.39 211.013 99.594 211.961 100ZM227.957 92.078C225.249 92.078 223.031 91.274 221.305 89.666C219.578 88.058 218.715 86.086 218.715 83.75C218.715 81.346 219.578 79.383 221.305 77.859C223.031 76.336 225.249 75.574 227.957 75.574C230.699 75.574 232.925 76.336 234.635 77.859C236.344 79.383 237.199 81.346 237.199 83.75C237.199 86.187 236.344 88.185 234.635 89.742C232.925 91.299 230.699 92.078 227.957 92.078ZM235.879 152.305L219.832 152.305L219.832 100.305L235.879 100.305Z"/>
     </g>
+<g id="ui">
+    <text class="type handle" x="62" y="62">@yurimakes</text>
+    <text class="type meta" x="838" y="62" text-anchor="end">DATA &amp; APPLIED AI</text>
     <text class="type tag" x="62" y="217">data engineering × applied ai</text>
-    <g transform="translate(62 244)">
+    <g class="pipeline" transform="translate(62 244)">
       <rect width="472" height="32" rx="16" fill="url(#pill)" stroke="#e5faff" stroke-opacity=".35"/>
       <g class="type step" text-anchor="middle">
         <text x="57" y="21">collect</text>
@@ -75,7 +85,39 @@
     </g>
     <g transform="translate(790 218)" fill="none" stroke="#f2ffff" stroke-opacity=".8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <rect width="48" height="48" rx="24" fill="url(#pill)" stroke-opacity=".3"/>
-      <path d="M15 24 H33 M26 17 L33 24 L26 31"/>
+      <path class="arrow-mark" d="M15 24 H33 M26 17 L33 24 L26 31"/>
     </g>
+
+</g>
+</defs>
+
+<g clip-path="url(#card)">
+  <use href="#bg" xlink:href="#bg"/>
+  <rect width="900" height="320" filter="url(#grain)" opacity=".14"/>
+
+  <!-- frosted glass card -->
+  <rect x="20.5" y="20.5" width="859" height="279" rx="26" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".5"/>
+
+  <use href="#ui" xlink:href="#ui"/>
+  <use href="#title" xlink:href="#title" fill="#fff"/>
+
+  <!-- Glass lens: ambient refraction plus standalone hover response. -->
+  <g class="lens-interaction">
+  <g clip-path="url(#lensClip)">
+    <g filter="url(#liquid)"><g>
+      <animateTransform attributeName="transform" type="translate" values="-36.4 -47.0;-64.4 -44.8;-84.0 -47.6;-53.2 -46.2;-36.4 -47.0" dur="12s" repeatCount="indefinite" keyTimes="0;.28;.5;.78;1" calcMode="spline" keySplines=".45 0 .25 1;.45 0 .25 1;.45 0 .25 1;.45 0 .25 1"/>
+      <g transform="scale(1.28)">
+        <use href="#bg" xlink:href="#bg"/>
+        <use href="#ui" xlink:href="#ui"/>
+        <use href="#title" xlink:href="#title" fill="#ffb347" x="3.5" y=".5" opacity=".9"/>
+        <use href="#title" xlink:href="#title" fill="#5b4bff" x="-3.5" y="-.5" opacity=".9"/>
+        <use href="#title" xlink:href="#title" fill="#5fe6ff" x="-1.5" opacity=".9"/>
+        <use href="#title" xlink:href="#title" fill="#fff"/>
+      </g>
+    </g></g>
   </g>
+  <g clip-path="url(#lensClip)"><ellipse cx="130" cy="168" rx="88" ry="84" fill="none" stroke="#1d43c4" stroke-opacity=".3" stroke-width="16" filter="url(#edge)"><animate attributeName="cx" values="130;230;300;190;130" dur="12s" repeatCount="indefinite" keyTimes="0;.28;.5;.78;1" calcMode="spline" keySplines=".45 0 .25 1;.45 0 .25 1;.45 0 .25 1;.45 0 .25 1"/><animate attributeName="cy" values="168;160;170;165;168" dur="12s" repeatCount="indefinite" keyTimes="0;.28;.5;.78;1" calcMode="spline" keySplines=".45 0 .25 1;.45 0 .25 1;.45 0 .25 1;.45 0 .25 1"/><animate attributeName="rx" values="88;94;84;88" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/><animate attributeName="ry" values="84;78;88;84" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></ellipse></g>
+  <ellipse cx="130" cy="168" rx="88" ry="84" fill="url(#lensFill)" stroke="url(#lensRim)" stroke-width="2"><animate attributeName="cx" values="130;230;300;190;130" dur="12s" repeatCount="indefinite" keyTimes="0;.28;.5;.78;1" calcMode="spline" keySplines=".45 0 .25 1;.45 0 .25 1;.45 0 .25 1;.45 0 .25 1"/><animate attributeName="cy" values="168;160;170;165;168" dur="12s" repeatCount="indefinite" keyTimes="0;.28;.5;.78;1" calcMode="spline" keySplines=".45 0 .25 1;.45 0 .25 1;.45 0 .25 1;.45 0 .25 1"/><animate attributeName="rx" values="88;94;84;88" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/><animate attributeName="ry" values="84;78;88;84" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></ellipse>
+</g>
+</g>
 </svg>
