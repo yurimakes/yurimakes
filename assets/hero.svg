@@ -10,13 +10,11 @@
     .step { font-size: 13px; font-weight: 500; fill: #f5fcff; }
     .meta { font-size: 11px; letter-spacing: 2px; fill: #e4f7ff; }
   
-    .lens-interaction { transform-origin: 450px 160px; transition: filter .5s ease, transform .65s cubic-bezier(.2,.7,.3,1); }
-    svg:hover .lens-interaction, svg:focus-visible .lens-interaction { filter: brightness(1.06) saturate(1.12); transform: scale(1.01); }
     .pipeline { transition: filter .4s ease; }
     svg:hover .pipeline { filter: drop-shadow(0 2px 8px #d6faff66); }
     .arrow-mark { transition: transform .4s ease; }
     svg:hover .arrow-mark { transform: translateX(3px); }
-    @media (prefers-reduced-motion: reduce) { .lens-interaction, .pipeline, .arrow-mark { transition: none; } svg:hover .lens-interaction { transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .pipeline, .arrow-mark { transition: none; } }
 </style>
 
   <filter id="blur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="48"/></filter>
@@ -24,29 +22,7 @@
     <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/>
     <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0"/>
   </filter>
-  <filter id="liquid" x="-20%" y="-40%" width="140%" height="180%" color-interpolation-filters="sRGB">
-    <feTurbulence type="fractalNoise" baseFrequency=".006 .009" numOctaves="1" seed="7" result="n0">
-      <animate attributeName="baseFrequency" values=".006 .009;.009 .006;.006 .009" dur="9s" repeatCount="indefinite"/>
-    </feTurbulence>
-    <feGaussianBlur in="n0" stdDeviation="4" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/>
-  </filter>
-
-  <radialGradient id="lensFill" cx=".32" cy=".28" r=".85">
-    <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
-    <stop offset=".5" stop-color="#fff" stop-opacity=".04"/>
-    <stop offset="1" stop-color="#cfe6ff" stop-opacity=".22"/>
-  </radialGradient>
-  <linearGradient id="lensRim" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#ffffff"/>
-    <stop offset=".35" stop-color="#7fe8ff"/>
-    <stop offset=".6" stop-color="#b9a2ff"/>
-    <stop offset=".85" stop-color="#ffc06b"/>
-    <stop offset="1" stop-color="#ffffff"/>
-  </linearGradient>
-  <filter id="edge" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
   <clipPath id="card"><rect width="900" height="320" rx="32"/></clipPath>
-  <clipPath id="lensClip"><ellipse cx="100" cy="160" rx="88" ry="84" ><animate attributeName="cx" values="100;100;220;270;420;530;580;720;800;800;800;800;100;100" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/><animate attributeName="cy" values="160;160;160;160;160;160;160;160;160;160;160;160;160;160" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/><animate attributeName="rx" values="64;66;70;72;76;80;82;87;92;24;32;0;64;64" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/><animate attributeName="ry" values="61;63;67;69;73;77;79;83;88;22;30;0;61;61" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/></ellipse></clipPath>
 
   <!-- background: blurred iridescent gradient -->
   <g id="bg">
@@ -104,45 +80,5 @@
   <use href="#ui" xlink:href="#ui"/>
   <use href="#title" xlink:href="#title" fill="#fff"/>
 
-  <!-- Glass lens: ambient refraction plus standalone hover response. -->
-  <g class="lens-interaction">
-<animate attributeName="opacity" values="0;1;1;1;1;1;1;1;1;1;0;0;0;0" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/>
-  <g clip-path="url(#lensClip)">
-    <g filter="url(#liquid)"><g>
-      <animateTransform attributeName="transform" type="translate" values="-28.00 -44.8;-28.00 -44.8;-61.60 -44.8;-75.60 -44.8;-117.60 -44.8;-148.40 -44.8;-162.40 -44.8;-201.60 -44.8;-224.00 -44.8;-224.00 -44.8;-224.00 -44.8;-224.00 -44.8;-28.00 -44.8;-28.00 -44.8" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/>
-      <g transform="scale(1.28)">
-        <use href="#bg" xlink:href="#bg"/>
-        <use href="#ui" xlink:href="#ui"/>
-        <use href="#title" xlink:href="#title" fill="#ffb347" x="3.5" y=".5" opacity=".9"/>
-        <use href="#title" xlink:href="#title" fill="#5b4bff" x="-3.5" y="-.5" opacity=".9"/>
-        <use href="#title" xlink:href="#title" fill="#5fe6ff" x="-1.5" opacity=".9"/>
-        <use href="#title" xlink:href="#title" fill="#fff"/>
-      </g>
-    </g></g>
-  </g>
-  <g clip-path="url(#lensClip)"><ellipse cx="100" cy="160" rx="88" ry="84" fill="none" stroke="#1d43c4" stroke-opacity=".3" stroke-width="16" filter="url(#edge)"><animate attributeName="cx" values="100;100;220;270;420;530;580;720;800;800;800;800;100;100" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/><animate attributeName="cy" values="160;160;160;160;160;160;160;160;160;160;160;160;160;160" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/><animate attributeName="rx" values="64;66;70;72;76;80;82;87;92;24;32;0;64;64" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/><animate attributeName="ry" values="61;63;67;69;73;77;79;83;88;22;30;0;61;61" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/></ellipse></g>
-  <ellipse cx="100" cy="160" rx="88" ry="84" fill="url(#lensFill)" stroke="url(#lensRim)" stroke-width="2"><animate attributeName="cx" values="100;100;220;270;420;530;580;720;800;800;800;800;100;100" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/><animate attributeName="cy" values="160;160;160;160;160;160;160;160;160;160;160;160;160;160" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/><animate attributeName="rx" values="64;66;70;72;76;80;82;87;92;24;32;0;64;64" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/><animate attributeName="ry" values="61;63;67;69;73;77;79;83;88;22;30;0;61;61" dur="6s" keyTimes="0;0.06;0.2;0.25;0.42;0.55;0.6;0.74;0.82;0.86;0.89;0.93;0.96;1" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1;.4 0 .6 1"/></ellipse>
-</g>
-
-  <g aria-hidden="true" fill="#ddfaff">
-<circle cx="780" cy="140" r="0" opacity="0">
-<animate attributeName="cx" values="780;780;768;758;758" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-<animate attributeName="cy" values="140;140;128;118;118" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-<animate attributeName="r" values="0;0;2.2;0;0" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-<animate attributeName="opacity" values="0;0;.6;0;0" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-</circle>
-<circle cx="820" cy="152" r="0" opacity="0">
-<animate attributeName="cx" values="820;820;832;842;842" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-<animate attributeName="cy" values="152;152;147.2;143.2;143.2" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-<animate attributeName="r" values="0;0;2.2;0;0" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-<animate attributeName="opacity" values="0;0;.6;0;0" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-</circle>
-<circle cx="803" cy="180" r="0" opacity="0">
-<animate attributeName="cx" values="803;803;804.8;806.3;806.3" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-<animate attributeName="cy" values="180;180;192;202;202" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-<animate attributeName="r" values="0;0;2.2;0;0" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-<animate attributeName="opacity" values="0;0;.6;0;0" dur="6s" keyTimes="0;.86;.89;.95;1" repeatCount="indefinite"/>
-</circle>
-</g>
 </g>
 </svg>
