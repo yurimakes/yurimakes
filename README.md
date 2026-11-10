@@ -24,7 +24,7 @@
 ### Machine Learning & Data Analysis
 
 - **[Wind Power Forecasting](https://github.com/yurimakes/wind-forecasting-ai)** — 기상 예보 기반 풍력 발전량 예측, 회귀·앙상블 비교와 시점 분리 검증.
-- **CUB-200-2011 Bird Classification** — PyTorch 기반 200종 이미지 분류·파인튜닝; 리더보드 Macro-F1 **0.9098**(저장소 기록).
+- **CUB-200-2011 Bird Classification** — PyTorch 기반 200종 이미지 분류·파인튜닝; 리더보드 Macro-F1 **0.9098**(딥러닝 수업 리더보드 3위).
 - **[Bank Marketing Classification](https://github.com/yurimakes/26-1-data-science-term-project)** — 불균형 분류 데이터의 모델 비교, F1·Recall·ROC-AUC 평가.
 
 ---
