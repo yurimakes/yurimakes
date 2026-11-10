@@ -21,6 +21,7 @@
 - **[FinBridge](https://github.com/start-finance-ai/finbridge-backend)** — 예비창업자·소상공인 지원사업 데이터·재무 계산 API와 규칙·LLM 분리 기반 폴백 구현.
 - **CertiMakers** — KC 인증 준비 AI 서비스 기획·해커톤 6인 팀 리딩 및 RAG 근거 검색·안전성 평가 **(팀장·PM)**.
 - **엄빠픽** — 효도 관광 패키지·접근성 데이터 수집·정규화 구조 설계, 가족 맞춤형 여행 일정 추천 및 대안 비교 앱 구현 **(해커톤 팀장·개발 총괄)**.
+- [**지관도참**](https://github.com/yurimakes/jigwandocham-app) — 제주 용천수 시민 관찰 데이터 수집·정제·집계 구조 설계, CLIP 기반 AI 사진 분류 및 온톨로지 관계 기반 연구 DB 실험·웹앱 구현 **(제주 환경 해커톤 최우수상)**.
 
 
 ### Machine Learning & Data Analysis
