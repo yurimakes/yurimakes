@@ -17,7 +17,7 @@
 - **[CANOPY Data Platform](https://github.com/yurimakes/canopy-data-platform)** — 친환경 교통 실천 서비스의 Azure 기반 GPS 수집·원본 보존 및 Databricks 기반 교통수단별 이동·탄소 배출·참여 지표 집계 파이프라인 구현, iPhone 앱 기반 현장 검증.
 - **[잠실 교통 혼잡 예측](https://github.com/transit-control-tower)** — 교통 데이터 정합성 개선과 시계열 혼잡 예측 검증 **(PM)**.
 - **미래에셋증권 금융상품 AI Agent** — 금융상품 온톨로지·Semantic Registry·PostgreSQL 조회 및 근거 기반 AI 응답 구현.
-- **[지원장바구니](https://github.com/yurimakes/youth-policy-llm-recommender)** — 청년정책 탐색 서비스 기획, 정책 데이터 파이프라인·FAISS 검색·LLM 설명 개발 **(학부 프로젝트 우수 수료)**.
+- **[지원장바구니](https://github.com/yurimakes/youth-policy-llm-recommender)** — 청년정책 탐색 서비스 기획, 정책 데이터 파이프라인·FAISS 검색·LLM 설명 개발 **(학부 프로젝트 우수자)**.
 - **[FinBridge](https://github.com/start-finance-ai/finbridge-backend)** — 예비창업자·소상공인 지원사업 데이터·재무 계산 API와 규칙·LLM 분리 기반 폴백 구현.
 - **CertiMakers** — KC 인증 준비 AI 서비스 기획·해커톤 6인 팀 리딩 및 RAG 근거 검색·안전성 평가 **(팀장·PM)**.
 - **엄빠픽** — 효도 관광 패키지·접근성 데이터 수집·정규화 구조 설계, 가족 맞춤형 여행 일정 추천 및 대안 비교 앱 구현 **(해커톤 팀장·개발 총괄)**.
